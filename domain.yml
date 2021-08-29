@@ -19,7 +19,7 @@ actions:
 
 
 responses:
-  utter_saludo:
+  utter_greet:
   - text: "¡Hola amigo! Bienvenido al Pokebot. 😊"
 
   utter_ask_pokemon:
