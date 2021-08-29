@@ -3,6 +3,7 @@ version: "2.0"
 intents:
   - greet
   - search_pokemon
+  - bot_challenge
 
 entities:
   - name_pokemon
@@ -34,6 +35,9 @@ responses:
     
   utter_pokemon_no_founded:
   - text: "Lo siento, no se encontraron resultados. 😥"
+
+  utter_iamabot:
+    - text: "Soy un robot desarrollado por Xavier Aguas"
 
 session_config:
   session_expiration_time: 60

@@ -1,15 +1,18 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
+
 language: es
 
 pipeline:
-  - name: "SpacyNLP"
-  - name: "SpacyTokenizer"
-  - name: "SpacyFeaturizer"
-  - name: "RegexFeaturizer"
-  - name: "DIETClassifier"
+  - name: SpacyNLP
+    model: es_core_news_sm
+  - name: SpacyTokenizer
+  - name: SpacyFeaturizer
+    pooling: mean
+  - name: RegexFeaturizer
+  - name: DIETClassifier
     entity_recognition: True
-    epochs: 50
+    epochs: 100
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
