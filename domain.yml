@@ -27,7 +27,7 @@ responses:
     
   utter_info_pokemon:
   - text: "**N.°**{id} \n**Nombre**: {name} \n**Tipos**: {type_pokemon}"
-    image: "{imagen}"
+    image: "{image}"
 
   utter_info_pokemon_without_image:
   - text: "**N.°**{id} \n**Nombre**: {name} \n**Tipos**: {type_pokemon}"
