@@ -12,14 +12,15 @@ pipeline:
   - name: RegexFeaturizer
   - name: DIETClassifier
     entity_recognition: True
-    epochs: 100
+    epochs: 200
 
 
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
-  - name: TEDPolicy
-    epochs: 3
   - name: MemoizationPolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
   - name: RulePolicy

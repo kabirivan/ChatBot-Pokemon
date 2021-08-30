@@ -43,12 +43,14 @@ class ActionSearchPokemon(Action):
     def name(self):
         return "action_search_pokemon"
 
+
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         name_pokemon = tracker.get_slot("name_pokemon")
         id_pokemon = tracker.get_slot("id_pokemon")
+        print(name_pokemon)
 
         if name_pokemon and not id_pokemon:
             req = requests.get(POKEAPI_URL + "pokemon/" + name_pokemon.lower())
