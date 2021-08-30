@@ -9,15 +9,12 @@ pipeline:
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
     pooling: mean
-  - name: LexicalSyntacticFeaturizer
-  - name: CountVectorsFeaturizer
-  - name: CountVectorsFeaturizer
-    analyzer: char_wb
-    min_ngram: 1
-    max_ngram: 4
+  - name: RegexFeaturizer
   - name: DIETClassifier
+    entity_recognition: True
     epochs: 100
-  - name: SpacyEntityExtractor
+
+
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
