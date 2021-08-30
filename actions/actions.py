@@ -38,21 +38,6 @@ POKEMON_TIPOS = {
     "fairy": "hada"
 }
 
-
-class ActionHelloWorld(Action):
-
-    def name(self) -> Text:
-        return "action_hello_world"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        dispatcher.utter_message(text="Hello World!")
-
-        return []
-
-
 class ActionSearchPokemon(Action):
 
     def name(self):
@@ -71,7 +56,7 @@ class ActionSearchPokemon(Action):
             req = requests.get(POKEAPI_URL + "pokemon/" + id_pokemon)
 
         if req.status_code == 404:
-            dispatcher.utter_message(template="utter_pokemon_no_founded")
+            dispatcher.utter_message(response="utter_pokemon_no_founded")
             return [AllSlotsReset()]
 
         info = req.json()
@@ -83,7 +68,7 @@ class ActionSearchPokemon(Action):
 
         if info_image_pokemon:
             dispatcher.utter_message(
-                template="utter_info_pokemon",
+                response="utter_info_pokemon",
                 id=info_id_pokemon,
                 name=info_name_pokemon,
                 type_pokemon=info_type_pokemon,
@@ -91,7 +76,7 @@ class ActionSearchPokemon(Action):
             )
         else:
             dispatcher.utter_message(
-                template="utter_info_pokemon_without_imagen",
+                response="utter_info_pokemon_without_imagen",
                 id=info_id_pokemon,
                 name=info_name_pokemon,
                 type_pokemon=info_type_pokemon
