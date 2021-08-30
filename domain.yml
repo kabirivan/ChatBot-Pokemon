@@ -1,8 +1,12 @@
 version: "2.0"
 
+
 intents:
   - greet
-  - search_pokemon
+  - search_pokemon:
+      use_entities:
+        - name_pokemon
+        - id_pokemon
   - bot_challenge
 
 entities:
