@@ -25,16 +25,8 @@ nlu:
     - Hola
     - saludos
 
-- intent: search_pokemon
+- intent: search_pokemon_name
   examples: |
-    - quiero buscar un pokemon
-    - Buscar pokémon
-    - cual es este pokemon
-    - Quién es ese Pokemon?
-    - buscar
-    - búsqueda
-    - usar Pokedex
-    - características de un pokemon
     - buscar a [Electabuzz](name_pokemon)
     - [Shellder](name_pokemon)
     - buscar [Mr. Mime](name_pokemon)
@@ -49,6 +41,9 @@ nlu:
     - [Oranguru](name_pokemon)
     - conocer más sobre [Jumpluff](name_pokemon)
     - [Pikachu](name_pokemon)
+
+- intent: search_pokemon_id
+  examples: |
     - número [73](id_pokemon)
     - pokemon numero [43](id_pokemon)
     - [67](id_pokemon)
