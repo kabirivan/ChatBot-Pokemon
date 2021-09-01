@@ -4,16 +4,28 @@
 language: es
 
 pipeline:
-  - name: SpacyNLP
-    model: es_core_news_sm
-  - name: SpacyTokenizer
-  - name: SpacyFeaturizer
-    pooling: mean
-  - name: RegexFeaturizer
+  - name: HFTransformersNLP
+    model_name: "bert"
+    model_weights: "bert-base-multilingual-uncased"
+  - name: LanguageModelTokenizer
+  - name: LanguageModelFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: char_wb
+    min_ngram: 2
+    max_ngram: 4
   - name: DIETClassifier
-    entity_recognition: True
-    epochs: 200
-
+    epochs: 100
+    constrain_similarities: true
+    number_of_transformer_layers: 4
+    transformer_size: 256
+    use_masked_language_model: True
+    drop_rate: 0.25
+    connection_density: 0.7
+    batch_size: [64, 256]
+    embedding_dimension: 30
+    hidden_layer_sizes:
+      text: [512, 128]
+  - name: EntitySynonymMapper
 
 
 # Configuration for Rasa Core.

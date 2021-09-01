@@ -52,6 +52,10 @@ class ActionSearchPokemon(Action):
         id_pokemon = tracker.get_slot("id_pokemon")
         print(name_pokemon)
 
+        if name_pokemon == None:
+            dispatcher.utter_message(response="utter_pokemon_no_founded")
+            return [AllSlotsReset()]
+
         if name_pokemon and not id_pokemon:
             req = requests.get(POKEAPI_URL + "pokemon/" + name_pokemon.lower())
         elif id_pokemon and not name_pokemon:
