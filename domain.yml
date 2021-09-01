@@ -2,32 +2,27 @@ version: "2.0"
 
 intents:
   - greet
-  - search_pokemon:
+  - search_pokemon_name:
       use_entities:
         - name_pokemon
-        - id_pokemon
   - bot_challenge
 
 entities:
   - name_pokemon
-  - id_pokemon
 
 slots:
   name_pokemon:
-    type: text
-  id_pokemon:
     type: text
 
 actions:
   - action_search_pokemon
 
-
 responses:
   utter_greet:
-  - text: "¡Hola amigo! Bienvenido al Pokebot. 😊"
+  - text: "¡Hola! Bienvenido al Pokebot. 😊"
 
   utter_ask_pokemon:
-  - text: "¿Qué Pokémon deseas buscar? Ingresa un nombre o un número."
+  - text: "¿Qué Pokémon deseas buscar? Ingresa un nombre."
     
   utter_info_pokemon:
   - text: "**N.°**{id} \n**Nombre**: {name} \n**Tipos**: {type_pokemon}"

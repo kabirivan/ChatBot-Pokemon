@@ -7,5 +7,5 @@ stories:
   - intent: greet
   - action: utter_greet
   - action: utter_ask_pokemon
-  - intent: search_pokemon
+  - intent: search_pokemon_name
   - action: action_search_pokemon

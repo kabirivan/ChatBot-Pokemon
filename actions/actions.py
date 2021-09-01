@@ -49,17 +49,13 @@ class ActionSearchPokemon(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         name_pokemon = tracker.get_slot("name_pokemon")
-        id_pokemon = tracker.get_slot("id_pokemon")
-        print(name_pokemon)
 
         if name_pokemon == None:
             dispatcher.utter_message(response="utter_pokemon_no_founded")
             return [AllSlotsReset()]
 
-        if name_pokemon and not id_pokemon:
+        if name_pokemon:
             req = requests.get(POKEAPI_URL + "pokemon/" + name_pokemon.lower())
-        elif id_pokemon and not name_pokemon:
-            req = requests.get(POKEAPI_URL + "pokemon/" + id_pokemon)
 
         if req.status_code == 404:
             dispatcher.utter_message(response="utter_pokemon_no_founded")

@@ -2,10 +2,6 @@ version: "2.0"
 
 nlu:
 
-- regex: id_pokemon
-  examples: |
-    - [0-9]{1,3}
-
 - intent: greet
   examples: |
     - hey
@@ -41,23 +37,6 @@ nlu:
     - [Oranguru](name_pokemon)
     - conocer más sobre [Jumpluff](name_pokemon)
     - [Pikachu](name_pokemon)
-
-- intent: search_pokemon_id
-  examples: |
-    - número [73](id_pokemon)
-    - pokemon numero [43](id_pokemon)
-    - [67](id_pokemon)
-    - buscar pokemon [712](id_pokemon)
-    - [3](id_pokemon)
-    - [808](id_pokemon)
-    - [230](id_pokemon)
-    - número [173](id_pokemon)
-    - pokemon numero [66](id_pokemon)
-    - [100](id_pokemon)
-    - buscar pokemon [578](id_pokemon)
-    - [99](id_pokemon)
-    - [601](id_pokemon)
-    - [79](id_pokemon)
 
 - intent: bot_challenge
   examples: |
