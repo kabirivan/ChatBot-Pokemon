@@ -37,6 +37,8 @@ Now you can talk to the chatbot through the command line. You can interact with 
 
 ##### * It should be mentioned that the training has not been intensive nor have we made many adjustments, so it may not work correctly with some Pokémon names.
 
+[<img src="images/ready.png" width="600"/>](images/ready.png)
+
 ## Update Rasa
 pip install rasa --upgrade
 
