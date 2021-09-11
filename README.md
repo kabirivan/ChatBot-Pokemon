@@ -15,6 +15,28 @@ Somehow we need to store the name of the Pokémon to search to be able to use it
 
 * We have declared the entities to recognize pokemon_name, as well as the slot to store pokemon_name. If a slot has the same name as an entity, the identified value of the entity is automatically assigned to that slot.
 
+4. Actions in RASA are pieces of Python code that are executed during conversation. These actions can contain functions of all kinds: executing requests to APIs, operations on databases, calculations, modifying the conversation itself, etc.
+
+* Within the action, to obtain the values stored in the slots we will use the tracker, which is the object that contains all the information of the current conversation. Depending on the slot that we find, the pokemon_name, we will make a request to the PokéApi, with the help of the requests module.
+
+## TRAINING
+```python
+rasa train
+```
+## RUN ACTION SERVER
+```python
+rasa run actions
+```
+## PREVIEW CHATBOT
+```python
+rasa shell
+```
+Now you can talk to the chatbot through the command line. You can interact with the bot in this way:
+
+[<img src="images/test.png" width="600"/>](images/test.png)
+
+##### * It should be mentioned that the training has not been intensive nor have we made many adjustments, so it may not work correctly with some Pokémon names.
+
 ## Update Rasa
 pip install rasa --upgrade
 
